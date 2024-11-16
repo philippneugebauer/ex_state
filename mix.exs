@@ -25,9 +25,7 @@ defmodule ExState.MixProject do
   end
 
   def application do
-    [
-      extra_applications: [:logger]
-    ]
+    [applications: applications(Mix.env())]
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
