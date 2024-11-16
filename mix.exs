@@ -28,6 +28,10 @@ defmodule ExState.MixProject do
     [applications: applications(Mix.env())]
   end
 
+  def applications(:all), do: [:ecto_sql]
+  def applications(:test), do: applications(:all)
+  def applications(_), do: applications(:all)
+
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
